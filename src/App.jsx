@@ -2,37 +2,35 @@ import axios from "axios"
 import { useRef, useState } from "react";
 
 const App = ()=>{
-  // const [data, setData] = useState([]);
-  // const inputRef = useRef();
-
-  // const searchWeather = async (event)=>{
-  //   event.preventDefault();
-  //   console.log(inputRef.current.value);
-  //   const res = await axios(`http://api.weatherapi.com/v1/current.json?key=6603ca9e8f34494282d81834240409&q=${inputRef.current.value}&aqi=no`)
-  //   setData([res.data, ...data])
-  //   inputRef.current.value = null 
-  // } 
   const [data, setData] = useState([]);
-  // const [loading, setLoading] = useState(false);
+  const inputRef = useRef();
 
-  //use ref for getting form value
-  const inputRef = useRef(null);
-
-  //show weather function
-  const showWeather = (event) => {
+  const searchWeather = async (event)=>{
     event.preventDefault();
-    axios.get(`https://api.weatherapi.com/v1/current.json?key=6603ca9e8f34494282d81834240409&q=${inputRef.current.value}&aqi=no`)
-      .then((res) => {
-        // console.log('res==>', res.data);
-        setData([res.data, ...data]);
-        inputRef.current.value = '';
-      })
-      .catch(() => {
-        // console.log(err);
-        alert('no such city');
-        inputRef.current.value = '';
-      })
-  }
+    console.log(inputRef.current.value);
+    const res = await axios.get(`http://api.weatherapi.com/v1/current.json?key=6603ca9e8f34494282d81834240409&q=${inputRef.current.value}&aqi=no`)
+    setData([res.data, ...data])
+    inputRef.current.value = null 
+  } 
+  // const [data, setData] = useState([]);
+  
+  // const inputRef = useRef(null);
+
+  
+  // const showWeather = (event) => {
+  //   event.preventDefault();
+  //   axios.get(`https://api.weatherapi.com/v1/current.json?key=6603ca9e8f34494282d81834240409&q=${inputRef.current.value}&aqi=no`)
+  //     .then((res) => {
+  //       // console.log('res==>', res.data);
+  //       setData([res.data, ...data]);
+  //       inputRef.current.value = '';
+  //     })
+  //     .catch(() => {
+  //       // console.log(err);
+  //       alert('no such city');
+  //       inputRef.current.value = '';
+  //     })
+  // }
   
 
   
@@ -43,7 +41,7 @@ const App = ()=>{
       <h1 className="text-3xl text-center mt-2  font-extrabold">
         Weather App
       </h1>
-      <form onSubmit={showWeather}>
+      <form onSubmit={searchWeather}>
       <div className='w-[50%] mx-auto mt-[3%]'>
         <input ref={inputRef} className="focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none w-full text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-md py-2 pl-10 ring-1 ring-slate-200 shadow-sm" type="text" aria-label="Filter projects" placeholder="City Name" />
       </div>
