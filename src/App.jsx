@@ -22,8 +22,7 @@ const App = ()=>{
   const showWeather = (event) => {
     event.preventDefault();
     setLoading(true)
-    // const key = 'b4db485d7c4c485fa6d84351232508'
-    axios.get(`https://api.weatherapi.com/v1/current.json?key=b4db485d7c4c485fa6d84351232508&q=${inputRef.current.value}&aqi=no`)
+    axios.get(`https://api.weatherapi.com/v1/current.json?key=6603ca9e8f34494282d81834240409&q=${inputRef.current.value}&aqi=no`)
       .then((res) => {
         // console.log('res==>', res.data);
         setData([res.data, ...data]);
