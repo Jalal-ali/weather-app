@@ -23,7 +23,7 @@ const App = ()=>{
 
   return (
     <>
-    <h1 class="mb-5 mt-2 bg-clip-text text-transparent text-center bg-gradient-to-r from-teal-700 via-lime-400 to-cyan-500  text-5xl font-black">
+    <h1 className="mb-5 mt-2 bg-clip-text text-transparent text-center bg-gradient-to-r from-teal-700 via-lime-400 to-cyan-500  text-5xl font-black">
     Weather App
 </h1>
     <div className="flex flex-wrap justify-content">
