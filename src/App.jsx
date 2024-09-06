@@ -13,7 +13,7 @@ const App = ()=>{
   //   inputRef.current.value = null 
   // } 
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   //use ref for getting form value
   const inputRef = useRef(null);
@@ -21,19 +21,16 @@ const App = ()=>{
   //show weather function
   const showWeather = (event) => {
     event.preventDefault();
-    setLoading(true)
     axios.get(`https://api.weatherapi.com/v1/current.json?key=6603ca9e8f34494282d81834240409&q=${inputRef.current.value}&aqi=no`)
       .then((res) => {
         // console.log('res==>', res.data);
         setData([res.data, ...data]);
         inputRef.current.value = '';
-        setLoading(false)
       })
       .catch(() => {
         // console.log(err);
         alert('no such city');
         inputRef.current.value = '';
-        setLoading(false)
       })
   }
   
@@ -51,7 +48,7 @@ const App = ()=>{
         <input ref={inputRef} className="focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none w-full text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-md py-2 pl-10 ring-1 ring-slate-200 shadow-sm" type="text" aria-label="Filter projects" placeholder="City Name" />
       </div>
       <div className='text-center'>
-        <button  type='submit' className="bg-blue-500 text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg mt-5">{loading ? 'loading...' : 'Show Weather'}</button>
+        <button  type='submit' className="bg-blue-500 text-white text-sm leading-6 font-medium py-2 px-3 rounded-lg mt-5">{'Show Weather'}</button>
       </div>
       </form>
     {/* <h1 className="mb-5 mt-2 bg-clip-text text-transparent text-center bg-gradient-to-r from-teal-700 via-lime-400 to-cyan-500  text-5xl font-black">
@@ -84,7 +81,7 @@ const App = ()=>{
           </div>
         </div> 
       }) : <h1
-      class="text-4xl mt-28 text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-800 via-lime-600 to-cyan-700">
+      className="text-4xl mt-28 text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-800 via-lime-600 to-cyan-700">
       No Weather Found.
   </h1>}
       </div>
