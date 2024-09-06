@@ -5,18 +5,14 @@ const App = ()=>{
   const [data, setData] = useState([]);
   const inputRef = useRef();
 
-  const searchWeather = (event)=>{
+  const searchWeather = async (event)=>{
     event.preventDefault();
     console.log(inputRef.current.value);
-    getData()
-  } 
-  
-  const getData = async ()=>{
     const res = await axios(`http://api.weatherapi.com/v1/current.json?key=6603ca9e8f34494282d81834240409&q=${inputRef.current.value}&aqi=no`)
     setData([res.data, ...data])
     inputRef.current.value = null ;
-  }
-  console.log(data);
+  } 
+  
   
 
   
@@ -42,7 +38,7 @@ const App = ()=>{
 
 <div  className="w-full flex flex-wrap items-center justify- justify-center">
     {data.length > 0 ? data.map((item , index) => {
-      return <div key={index} className="bg-slate-300 m-3 p-8 bg-opacity-80 rounded-3xl flex space-x-12 items-center shadow-lg border-t-2 border-green-300">
+      return <div key={index} className=" bg-slate-300 m-3 p-8 bg-opacity-80 rounded-3xl flex space-x-12 items-center shadow-lg border-t-2 border-green-300">
           <div>
            <img src={item.current.condition.icon} alt="img" />
             <p className="text-center text-gray-500 mt-2 text-sm">{item.current.condition.text}</p>
