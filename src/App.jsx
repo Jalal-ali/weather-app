@@ -8,7 +8,7 @@ const App = ()=>{
   const searchWeather = async (event)=>{
     event.preventDefault();
     console.log(inputRef.current.value);
-    const res = await axios.get(`http://api.weatherapi.com/v1/current.json?key=6603ca9e8f34494282d81834240409&q=${inputRef.current.value}&aqi=no`)
+    const res = await axios.get(`https://api.weatherapi.com/v1/current.json?key=6603ca9e8f34494282d81834240409&q=${inputRef.current.value}&aqi=no`)
     setData([res.data, ...data])
     inputRef.current.value = null 
   } 
