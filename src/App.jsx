@@ -10,8 +10,8 @@ const App = ()=>{
     console.log(inputRef.current.value);
     const res = await axios(`http://api.weatherapi.com/v1/current.json?key=6603ca9e8f34494282d81834240409&q=${inputRef.current.value}&aqi=no`)
     setData([res.data, ...data])
-    inputRef.current.value = null ;
   } 
+  inputRef.current.value = null ;
   
   
 
