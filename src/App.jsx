@@ -34,7 +34,6 @@ const App = ()=>{
     <h1 className="mb-5 bg-clip-text text-transparent text-center bg-gradient-to-b from-emerald-500 to-lime-400  text-5xl font-black">
     Weather App
 </h1>
-    <div className="flex flex-wrap justify-content">
 
 <div className="relative w-full max-w-xl mt-4 mx-4 md:mx-auto lg:mx-auto xl:mx-auto bg-white rounded-full">
   <form onSubmit={searchWeather}>
@@ -47,7 +46,7 @@ const App = ()=>{
   </form>
 </div>
 
-<div  className="w-full flex flex-wrap items-center justify- justify-center">
+<div className="w-full flex flex-wrap items-center z-10 justify-center">
     {data.length > 0 ? data.map((item , index) => {
       return <div key={index} className="flex flex-wrap justify-center m-5">
           <Card src={item.current.condition.icon} text={item.current.condition.text} temp={item.current.temp_c} name={item.location.name} country={item.location.country} />
@@ -66,7 +65,6 @@ const App = ()=>{
    
    
     </div>
-</div>
     </>
   )
 }
