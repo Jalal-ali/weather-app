@@ -30,12 +30,12 @@ const App = ()=>{
 
   return (
     <>
-<div className="bg-cover py-3 min-h-screen bg-no-repeat bg-[url('https://static.vecteezy.com/system/resources/previews/036/226/616/large_2x/ai-generated-nature-landscapes-background-free-photo.jpg')]">
+<div className="bg-cover py-3 px-3 min-h-screen bg-no-repeat bg-[url('https://static.vecteezy.com/system/resources/previews/036/226/616/large_2x/ai-generated-nature-landscapes-background-free-photo.jpg')]">
     <h1 className="mb-5 bg-clip-text text-transparent text-center bg-gradient-to-b from-emerald-500 to-lime-400  text-5xl font-black">
     Weather App
 </h1>
 
-<div className="relative w-full max-w-xl mt-4 mx-4 md:mx-auto lg:mx-auto xl:mx-auto bg-white rounded-full">
+<div className="relative w-full max-w-xl mt-4 md:mx-auto lg:mx-auto xl:mx-auto bg-white rounded-full">
   <form onSubmit={searchWeather}>
   <input ref={inputRef} placeholder="Search weather e.g. Karachi , Islamabad" className="rounded-full w-full h-16 bg-transparent  py-2 pl-8 pr-32 outline-none border-2 border-gray-100 shadow-md hover:outline-none focus:ring-teal-200 focus:border-teal-200" type="text" name="query" id="query" required/>
   <button type="submit" className="absolute inline-flex items-center h-10 px-4 py-2 text-sm text-white transition duration-150 ease-in-out rounded-full outline-none right-3 top-3 bg-teal-600 sm:px-6 sm:text-base sm:font-medium hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
