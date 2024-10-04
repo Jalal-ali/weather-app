@@ -30,7 +30,7 @@ const App = ()=>{
 
   return (
     <>
-<div className="bg-cover py-3 min-h-screen bg-no-repeat bg-[url('./src/assets/vecteezy_ai-generated-nature-landscapes-background_36226616.jpg')]">
+<div className="bg-cover py-3 min-h-screen bg-no-repeat bg-[url('https://static.vecteezy.com/system/resources/previews/036/226/616/large_2x/ai-generated-nature-landscapes-background-free-photo.jpg')]">
     <h1 className="mb-5 bg-clip-text text-transparent text-center bg-gradient-to-b from-emerald-500 to-lime-400  text-5xl font-black">
     Weather App
 </h1>
