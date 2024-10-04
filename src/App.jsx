@@ -30,15 +30,15 @@ const App = ()=>{
 
   return (
     <>
-
-    <h1 className="mb-5 mt-2 bg-clip-text text-transparent text-center bg-gradient-to-r from-teal-700 via-lime-400 to-cyan-500  text-5xl font-black">
+<div className="bg-cover py-3 min-h-screen bg-no-repeat bg-[url('./src/assets/vecteezy_ai-generated-nature-landscapes-background_36226616.jpg')]">
+    <h1 className="mb-5 bg-clip-text text-transparent text-center bg-gradient-to-b from-emerald-500 to-lime-400  text-5xl font-black">
     Weather App
 </h1>
     <div className="flex flex-wrap justify-content">
 
-<div className="relative w-full max-w-xl mt-4 mx-auto bg-white rounded-full">
+<div className="relative w-full max-w-xl mt-4 mx-4 md:mx-auto lg:mx-auto xl:mx-auto bg-white rounded-full">
   <form onSubmit={searchWeather}>
-  <input ref={inputRef} placeholder="Search weather e.g. Karachi , Islamabad" className="rounded-full w-full h-16 bg-transparent py-2 pl-8 pr-32 outline-none border-2 border-gray-100 shadow-md hover:outline-none focus:ring-teal-200 focus:border-teal-200" type="text" name="query" id="query"/>
+  <input ref={inputRef} placeholder="Search weather e.g. Karachi , Islamabad" className="rounded-full w-full h-16 bg-transparent  py-2 pl-8 pr-32 outline-none border-2 border-gray-100 shadow-md hover:outline-none focus:ring-teal-200 focus:border-teal-200" type="text" name="query" id="query" required/>
   <button type="submit" className="absolute inline-flex items-center h-10 px-4 py-2 text-sm text-white transition duration-150 ease-in-out rounded-full outline-none right-3 top-3 bg-teal-600 sm:px-6 sm:text-base sm:font-medium hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500">
     <svg className="-ml-0.5 sm:-ml-1 mr-2 w-4 h-4 sm:h-5 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
@@ -59,13 +59,14 @@ const App = ()=>{
     </svg>
       <span className="sr-only">Loading...</span>
   </div> : <h1
-      className="text-4xl  mt-28 text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-800 via-lime-600 to-cyan-700">
+      className="text-4xl mt-28 text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-green-800 via-gray-950 to-lime-700">
       No Weather Found.
   </h1>}
       </div>
    
    
     </div>
+</div>
     </>
   )
 }
